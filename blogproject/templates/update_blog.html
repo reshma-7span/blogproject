@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Blog</title>
+</head>
+<body>
+    <h1>Update Blog</h1>
+    <form method="POST" action="{% url 'update_blog' blog_id=blog.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Blog</button><br><br>
+    </form>
+    <a href="{% url 'blog_detail' blog.id %}">Back to Blog Detail</a>
+</body>
+</html>
